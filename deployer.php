@@ -88,7 +88,7 @@ if (!empty(TOKEN) && isset($_SERVER["HTTP_X_HUB_SIGNATURE"]) && $token !== hash_
                 // write to the log
                 fputs($file, "*** RESET TO HEAD INITIATED ***" . "\n");
 
-                exec(GIT . " reset --hard HEAD 2>&1", $output, $exit);
+                exec(GIT . " reset --hard origin/HEAD 2>&1", $output, $exit);
 
                 // reformat the output as a string
                 $output = (!empty($output) ? implode("\n", $output) : "[no output]") . "\n";
